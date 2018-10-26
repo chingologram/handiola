@@ -151,6 +151,8 @@ class ReservasController extends Controller
     echo $payment->status;
 */
 
+    $session = Yii::$app->session;
+
 
 
     $model = new Reservas();
@@ -163,11 +165,16 @@ class ReservasController extends Controller
     //$dni = $params['Reservas']['dni']; 
     $cantidad_habitaciones = $params['Reservas']['cantidad_habitaciones'];
     $cantidad_banos = $params['Reservas']['cantidad_banos'];
-
     $fecha_desde = $params['Reservas']['fecha_desde'];
     $fecha_hasta = $params['Reservas']['fecha_hasta'];
 
 
+    $session['cantidad_habitaciones'] = $cantidad_habitaciones;
+    $session['cantidad_banos'] = $cantidad_banos;
+    $session['fecha_desde'] = $fecha_desde;
+    $session['fecha_hasta'] = $fecha_hasta;
+
+/*
     $datetime1  = date_create($fecha_desde);
     $datetime1  = date_create(date_format($datetime1 , 'Y-m-d'));
     $datetime2  = date_create($fecha_hasta);
@@ -175,6 +182,22 @@ class ReservasController extends Controller
     $interval   = date_diff($datetime1, $datetime2);
     $numero_dias = $interval->format('%a');
     $numero_dias = $numero_dias * 1;
+
+*/
+    $datetime1  = date_create($fecha_desde);
+    $datetime1  = date_create(date_format($datetime1 , 'Y-m-d'));
+    $datetime2  = date_create($fecha_hasta);
+    $datetime2  = date_create(date_format($datetime2  , 'Y-m-d'));    
+    $interval   = date_diff($datetime1, $datetime2);
+    $numero_dias = $interval->format('%R%a');
+
+//echo $numero_dias; exit;
+
+    //$numero_dias = $numero_dias * 1;
+
+
+
+//echo $numero_dias; exit;
 
 
     if ($numero_dias < 0){
@@ -315,8 +338,11 @@ class ReservasController extends Controller
         $model->costo_total = $data['costo_total'];
         $model->estatus = $data['estatus'];          
         $model->save();   
+
             
         if($model->save()) {
+            
+            Yii::$app->session->destroy();
             return $this->redirect(['servicios']);
         }
         //ReservasController::actionServicios();       ////VERIFICAR PORQUE NO REDIRECCIONA A VISTA INDEX

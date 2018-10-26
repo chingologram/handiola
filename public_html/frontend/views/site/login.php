@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'rememberMe')->label('Recuérdame')->checkbox() ?>
 
                 <div style="color:#999;margin:1em 0">
-                    Si olvidó su contraseña, puede <?= Html::a('restablecerla', ['site/request-password-reset']) ?>.
+                    Si olvidó su contraseña, puede <?= Html::a('restablecerla', ['site/request-password-reset'], ['class'=>'btn btn-default']) ?>
                 </div>
 
                 <div class="form-group">
