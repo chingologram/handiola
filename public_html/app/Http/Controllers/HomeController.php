@@ -389,4 +389,15 @@ $locations=$json['status'];
 
       return response()->json($user);
      }
+
+     public function mision()
+     {
+         return $this->inicio();
+     }
+     
+     public function vision()
+     {
+         return $this->inicio();
+     }
+     
 }

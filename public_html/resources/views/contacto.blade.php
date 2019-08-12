@@ -44,7 +44,7 @@
        <input type="text" name="" id="nombre" value="" placeholder="¿Cómo te llamas?">
     </div>
     <div class="6u">
-      <label for="">Corre Electronico</label>
+      <label for="">Correo Electronico</label>
       <input type="text" id="correo" value="" placeholder="¿Cuál es tu correo?">
     </div>
     </div>

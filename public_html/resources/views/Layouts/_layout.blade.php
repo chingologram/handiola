@@ -37,10 +37,8 @@
 				</script>
     <header id="header" class="skel-layers-fixed">
         <img src="../../../public/template/images/finalbrand.png" alt="">
-        <nav id="nav">
+        <nav id="nav" class="main-nav">
           <ul>
-            <li><a class="nav-link" href="/">Inicio</a></li>
-            <li></a><a class="nav-link" href="contacto">Contacto</a></li>
             @if (Auth::check())
             <li class="nav-item">
               <a class="nav-link" href="Reservas">Reservas</a>
@@ -50,10 +48,22 @@
             </li>
             @else
             <li class="nav-item">
-              <a href="login" class="button " style="background-color:rgba(156,156,156,0.8);">Iniciar Sesión</a>
+              <a href="login" class="button " style="background-color:rgba(156,156,156,0.8);">Iniciar Sesión | Registrarse</a>
             </li>
            @endif
           </ul>
+          
+        </nav>
+        <nav class="sub-nav clearfix">
+              <ul>
+                  <li><a href="/">Inicio</a></li>
+                  <li><a href="/mision">Misión</a></li>
+                  <li><a href="/vision">Visión</a></li>
+                  <li><a href="/contacto">Contacto</a></li>
+                  @if (Auth::check())
+                      <li><a href="/reservas">Mis Reservas</a></li>
+                  @endif
+              </ul>
         </nav>
       </header>
       <div>
