@@ -915,7 +915,7 @@
 				/*font-size: 1.25em;*/
 			}
 
-		#header nav {
+		#header .main-nav {
 			height: inherit;
 			line-height: inherit;
 			position: absolute;
@@ -924,47 +924,71 @@
 			vertical-align: middle;
 		}
 
-			#header nav > ul {
+			#header .main-nav > ul {
 				list-style: none;
 				margin: 0;
 				padding-left: 0;
 			}
 
-				#header nav > ul > li {
+				#header .main-nav > ul > li {
 					border-radius: 6px;
 					display: inline-block;
 					margin-left: 2em;
 					padding-left: 0;
 				}
 
-					#header nav > ul > li a {
+					#header > ul > li a {
 						-moz-transition: color 0.2s ease-in-out;
 						-webkit-transition: color 0.2s ease-in-out;
 						-o-transition: color 0.2s ease-in-out;
 						-ms-transition: color 0.2s ease-in-out;
 						transition: color 0.2s ease-in-out;
-						color: #555f66;
+						color: #555f66 !important;
 						display: inline-block;
 						text-decoration: none;
 					}
 
-						#header nav > ul > li a:hover {
-							color: #629DD1;
-						}
-
-					#header nav > ul > li:first-child {
+					#header .main-nav > ul > li:first-child {
 						margin-left: 0;
 					}
 
-					#header nav > ul > li .button {
+					#header .main-nav > ul > li .button {
 						height: 2.25em;
 						line-height: 2.25em;
 						margin-bottom: 0;
+						margin-top: .7em;
 						padding: 0 1em;
 						position: relative;
 						top: -0.075em;
 						vertical-align: middle;
 					}
+					#header .sub-nav  {
+                                            background: white;
+                                            text-align: right;
+                                            line-height: 2.5em;
+                                        }
+                                        #header nav.sub-nav ul > li a:hover {
+                                            color: #629DD1 !important;
+                                            text-decoration: underline;
+                                        }
+
+					#header .sub-nav ul {
+                                            list-style: none;
+                                            display: inline-block;
+                                            margin: 0;
+                                            padding-right: 1.25em;
+                                        }
+					#header .sub-nav ul li{
+                                            float: left;
+                                            padding: .25em 1em;
+                                        }
+					#header .sub-nav ul li a {
+                                            color: #555f66 !important;
+                                        }
+					#header .sub-nav ul li:last-child {
+                                            padding-right: 0;
+                                        }
+
 
 		#header .container {
 			position: relative;
@@ -974,7 +998,7 @@
 				left: 0;
 			}
 
-			#header .container nav {
+			#header .container .main-nav {
 				right: 0;
 			}
 
