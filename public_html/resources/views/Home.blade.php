@@ -818,8 +818,7 @@ function calcularReserva(){
            @if (Auth::check())
               <li><a href="javascript:openNav();" class="button big special">Reservar Ya</a></li>
            @else
-                   <li><a href="registro" class="button big special">Reservar Ya</a></li>
-                   <li ><a style="background-color:rgba(156,156,156,0.8);" href="login" class="button big" >Iniciar Sesión</a></li>
+               <li><a href="registro" class="button big special">Reservar Ya</a></li>
            @endif
 
 
