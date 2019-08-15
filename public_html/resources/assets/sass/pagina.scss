@@ -1,0 +1,26 @@
+@import "variables";
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
+h2 {
+    text-align: left;
+    font-size: 1.5em;
+    margin-bottom: .5em;
+}
+
+.page {
+    margin: 2em 0;
+    p {
+        font-size: 1.2em;
+    }
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}

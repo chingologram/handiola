@@ -1,11 +1,29 @@
 <?php
 
+use Illuminate\Support\Facades\Storage;
+
+$pages = Cache::rememberForever('pages', function() {
+    $parsedown = new Parsedown;
+    $pages = Storage::disk('public')->allFiles('pages');
+    $pageViews = [];
+    foreach ($pages as $aPage) {
+        $pageName = preg_replace('/pages\/(.*)\.md/', '\1', $aPage);
+        $pageViews[$pageName] = $parsedown->setSafeMode(false)->setMarkupEscaped(false)->text(Storage::disk('public')->get($aPage));
+    }
+    return $pageViews;
+});
+foreach ($pages as $route => $content) {
+    Route::get("/$route",  function() use ($content) {
+        return View::make('pagina', [
+            'content' => $content
+        ]);
+    });
+}
+
 
 Route::get('/', 'HomeController@inicio')->name('/');
 Route::get('registro', 'HomeController@registro')->name('registro');
 Route::get('login', 'HomeController@login')->name('login');
-Route::get('mision', 'HomeController@mision')->name('mision');
-Route::get('vision', 'HomeController@vision')->name('vision');
 Route::get('calcularReserva', 'HomeController@calcularReserva')->name('calcularReserva');
 Route::get('contacto', 'HomeController@contacto')->name('contacto');
 Route::post('get_locationsCSV','HomeController@get_locationsCSV')->name('get_locationsCSV');
