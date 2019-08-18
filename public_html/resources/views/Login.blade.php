@@ -20,8 +20,23 @@ $(document).ready(function(){
 					<span class="login100-form-title p-b-55">
             <img src="../../../public/template/images/br.png" alt="">
 					</span>
+        <div class="text-center w-full p-b-22">
+          <span class="txt1">
+            Iniciar Sesión Con
+          </span>
+        </div>
+            <a href="facebook" class="btn-face m-b-10">
+              <i class="fa fa-facebook-official"></i>
+              Facebook
+            </a>
+            
+            <a href="redirectgo" class="btn-google m-b-10">
+              <img src="../../../public/template/login/images/icons/icon-google.png" alt="GOOGLE">
+              Google
+            </a>
+            
 
-          <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
+          <div class="wrap-input100 validate-input m-t-16 m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
           <input class="input100" type="text" name="email" placeholder="Email">
           <span class="focus-input100"></span>
           <span class="symbol-input100">
@@ -56,30 +71,18 @@ $(document).ready(function(){
           </button>
         </div>
 
-        <div class="text-center w-full p-t-42 p-b-22">
-          <span class="txt1">
-            O Iniciar Sesión Con
-          </span>
-        </div>
+        
 
-        <a href="facebook" class="btn-face m-b-10">
-          <i class="fa fa-facebook-official"></i>
-          Facebook
-        </a>
-
-        <a href="redirectgo" class="btn-google m-b-10">
-          <img src="../../../public/template/login/images/icons/icon-google.png" alt="GOOGLE">
-          Google
-        </a>
-
+        
+<!--
         <div class="text-center w-full p-t-115">
-          <span class="txt1">
-            No Recuerdas?
-          </span>
-
-          <a class="txt1 bo1 hov1" href="#">
-            Sign up ahora
+          <a href="/forgot-password">
+              <span class="txt1">
+                No recuerdas tu contrase&ntilde;a?
+              </span>
           </a>
+-->
+
         </div>
          </form>
 
