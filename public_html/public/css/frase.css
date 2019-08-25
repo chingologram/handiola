@@ -8,7 +8,6 @@
     to {left: 2%;}
 }
 
-
 .overlay {
     height: 100%;
     width: 0;
@@ -49,6 +48,24 @@
   overflow:hidden;
   padding: 8px;
 }
+
+.overlay .terms {
+    font-size: smaller;
+    margin: 1em 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.overlay .terms a {
+    display: inline;
+    text-decoration: underline;
+    font: inherit;
+    letter-spacing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+
 
 .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App;
+use Illuminate\Support\Facades\Storage;
+use Hash;
 use App\User;
 use App\Reserva;
 use App\Dolar;
@@ -10,6 +13,8 @@ use App\libs\MercadoPago\MP;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailable;
+use GrahamCampbell\Markdown\Facades\Markdown;
+
 //use MercadoPago\MP;
 class HomeController extends Controller
 {
@@ -312,13 +317,13 @@ $locations=$json['status'];
 
     //  email,dni,nombre,apellido,telefono_movil,domicilio,direccion,password,confirmpass,descripcion,recaptchaResponse
 
-         if ($recaptcha->score >= 0.5) {
+         if (!App::environment('production') || $recaptcha->score >= 0.5) {
              $user= new User;
              $user->email=$email;
              $user->name=$name;
              $user->apellido=$apellido;
              $user->telefono_movil=$telefono_movil;
-             $user->password=bcrypt($password);
+             $user->password=Hash::make($password);
              $user->descripcion=$descripcion;
              $user->save();
 
@@ -338,14 +343,12 @@ $locations=$json['status'];
    public function registro(){
        return view('Registro');
    }
-      public function inicio(){
-        if (Auth::check()) {
 
-         return view('Home');
-        }else{
-        return view('Home');
-         }
-     }
+   public function inicio() {
+
+       return view('Home');
+   }
+
      public function login(){
        if (Auth::check()) {
 

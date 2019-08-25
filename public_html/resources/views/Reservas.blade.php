@@ -39,16 +39,19 @@
 function initauto(){
 
 
-  var input = document.getElementById('direccion_alojamiento');
-  var input2=document.getElementById('direccion_llave');
-       var autocomplete = new google.maps.places.Autocomplete(input,{types: ['geocode']});
-       google.maps.event.addListener(autocomplete, 'place_changed', function(){
-          var place = autocomplete.getPlace();
-       });
-       var autoComplete2 = new google.maps.places.Autocomplete(input2,{types: ['geocode']});
-       google.maps.event.addListener(autocomplete, 'place_changed', function(){
-          var place = autocomplete.getPlace();
-       });
+    var input = document.getElementById('direccion_alojamiento');
+    var input2=document.getElementById('direccion_llave');
+    var southWest = new google.maps.LatLng(-58.74252,-34.46411);
+    var northEast = new google.maps.LatLng(-58.06068,-34.74669);
+    var cabaBounds = new google.maps.LatLngBounds( southWest, northEast );
+    var autocomplete = new google.maps.places.Autocomplete(input,{bounds: cabaBounds, types: ['geocode']});
+    google.maps.event.addListener(autocomplete, 'place_changed', function(){
+        var place = autocomplete.getPlace();
+    });
+    var autoComplete2 = new google.maps.places.Autocomplete(input2,{bounds: cabaBounds, types: ['geocode']});
+    google.maps.event.addListener(autocomplete, 'place_changed', function(){
+        var place = autocomplete.getPlace();
+    });
 }
 
 function validarDirreccion1(){

@@ -10,6 +10,7 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbkfRCQbeJ5ydJOPMnqQuscHsSHRoxg7Q&libraries=places"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment-with-locales.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="public/{{ mix('js/home.js') }}"></script>
 
 <style >
 #modalReserva .row+.row>* {
@@ -28,16 +29,22 @@
 function initauto(){
 
 
-  var input = document.getElementById('direccion_alojamiento');
-  var input2=document.getElementById('direccion_llave');
-       var autocomplete = new google.maps.places.Autocomplete(input,{types: ['geocode']});
-       google.maps.event.addListener(autocomplete, 'place_changed', function(){
-          var place = autocomplete.getPlace();
-       });
-       var autoComplete2 = new google.maps.places.Autocomplete(input2,{types: ['geocode']});
-       google.maps.event.addListener(autocomplete, 'place_changed', function(){
-          var place = autocomplete.getPlace();
-       });
+    console.log(123)
+    var input = document.getElementById('direccion_alojamiento');
+    var input2=document.getElementById('direccion_llave');
+    var southWest = new google.maps.LatLng( -34.71661,-58.57973);
+    var northEast = new google.maps.LatLng( -34.51147,-58.32847);
+    var cabaBounds = new google.maps.LatLngBounds( southWest, northEast );
+    var autocomplete = new google.maps.places.Autocomplete(input,{types: ['geocode'], bounds: cabaBounds, strictBounds: true});
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function(){
+        var place = autocomplete.getPlace();
+    });
+    var autoComplete2 = new google.maps.places.Autocomplete(input2,{bounds: cabaBounds, types: ['geocode'], strictBounds: true});
+
+    google.maps.event.addListener(autoComplete2, 'place_changed', function(){
+        var place = autoComplete2.getPlace();
+    });
 }
 
 function validarDirreccion1(){
@@ -795,15 +802,24 @@ function calcularReserva(){
                 horas.
              </div>
 
+<!--
              <a class="in-sti" style="top:-100px;position:relative;color:lightblue;border: none;outline: none;width:250px;height: 40px;display:inline;" href="terminos_y_condiciones" target="_blank">  Ha leido los Terminos y condiciones?</a>
                <select class="sel" id="terminos" name="" style="text-decoration: none;top:-100px;position:relative;color:white;border: none;outline: none;width:250px;height: 40px;display:inline;">
                  <option value="0">Seleccionar</option>
                  <option value="1">Si Lei y Acepto los Terminos y Condiones.</option>
                </select><br>
+-->
+            
              <input id="costo_total"  style="color:white;border: none;outline: none;width:200px;height: 40px;display:inline;" type="text" class="in-sti" disabled>
                <button type="button" id="GuardarReserva" style="font-size: 25px;" class="button special" name="button">Reservar Ya</button>
             </a>
+            <div class="terms">
+                <small>
+                    Al hacer clic aceptas los <a target="_blank" href="/terminos_y_condiciones">Términos y Condiciones de Uso y Política de Privacidad</a>                </small>
+            </div>
          </p>
+                        
+
      </div>
   </div>
 </div>
@@ -870,6 +886,23 @@ function calcularReserva(){
                     <li>Con nuestra experiencia en la industria serás el mejor anfitrión.</li>
                     <li>Sabemos que contás con nosotros y siempre vamos a cumplirte.</li>
      							</section>
+     						</div>
+     					</div>
+     				</div>
+     			</section>
+                        <section id="servicios" class="wrapper style2">
+     				<header class="major">
+     					<h2>NUESTROS SERVICIOS</h2>
+     				</header>
+     				<div class="container">
+     					<div class="row">
+                                                <div class="6u">
+                                                    @include('togo')
+                                                    <button class="button special">Reserva To-Go</button>
+     						</div>
+                                                <div class="6u">
+                                                    @include('plus')
+                                                    <button class="button special">Reserva Plus</button>
      						</div>
      					</div>
      				</div>

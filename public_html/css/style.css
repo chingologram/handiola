@@ -147,6 +147,11 @@
 	.align-right {
 		text-align: right;
 	}
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
 
 /* Section/Article */
 
@@ -1115,4 +1120,35 @@
                         width: 2em;
                         height: 2em;
 		}
-		
+
+                #servicios * {
+                    font-family: 'Roboto';
+                    color: white;
+                }
+
+                #servicios ul {
+                    padding: 0;
+                }
+                #servicios ul li {
+                    padding: 0;
+                    list-style-type: none;
+                }
+
+
+                @keyframes focustext {
+                    from {
+                        color: #b02952;
+                    }
+
+                    to {
+                        color: #ffffff;
+                    }
+                }
+
+                .focustext h2 {
+                    color: inherit;
+                    animation-duration: 0.25s;
+                    animation-delay: .5s;
+                    animation-name: focustext;
+                    animation-iteration-count: 3;
+                }

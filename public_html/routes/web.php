@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Storage;
 
 $pages = Cache::rememberForever('pages', function() {
     $parsedown = new Parsedown;
-    $pages = Storage::disk('public')->allFiles('pages');
+    $pages = Storage::disk('static')->allFiles('pages');
     $pageViews = [];
     foreach ($pages as $aPage) {
         $pageName = preg_replace('/pages\/(.*)\.md/', '\1', $aPage);
@@ -19,7 +19,6 @@ foreach ($pages as $route => $content) {
         ]);
     });
 }
-
 
 Route::get('/', 'HomeController@inicio')->name('/');
 Route::get('registro', 'HomeController@registro')->name('registro');

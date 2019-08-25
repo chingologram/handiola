@@ -959,12 +959,23 @@
 					#header nav > ul > li .button {
 						height: 2.25em;
 						line-height: 2.25em;
-						margin-bottom: 0;
+                                                margin-top: 0.7em;
+                                                margin-bottom: 0;
 						padding: 0 1em;
 						position: relative;
 						top: -0.075em;
 						vertical-align: middle;
 					}
+                                        #header nav.sub-nav {
+                                                background: white;
+                                        }
+                                        #header nav.sub-nav > ul > li {
+						position: relative;
+						top: -0.075em;
+                                        }
+                                        #header nav.sub-nav > ul > li::after {
+                                            clear: both;
+                                        }
 
 		#header .container {
 			position: relative;
