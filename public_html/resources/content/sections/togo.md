@@ -1,6 +1,8 @@
 ## Handiola To-Go
 
-- Test1
-- Test2
-- Test3
-
+- Búsqueda de llaves
+- Recibimiento del huésped y Check-In
+- Atención a requerimiento del huesped*
+- Despedida del huésped y checkout
+- Limpieza
+- Chequeo de seguridad

@@ -86,3 +86,12 @@
 				padding-left: 0;
 				display: block;
 			}
+
+                #servicios .\36u {
+                    text-align: center;
+                }
+
+                #servicios .\36u:not(:last-child) {
+                    margin-bottom: 2em;
+                }
+

@@ -898,11 +898,15 @@ function calcularReserva(){
      					<div class="row">
                                                 <div class="6u">
                                                     @include('togo')
-                                                    <button class="button special">Reserva To-Go</button>
+                                                    <a href="/contacto">
+                                                        <button class="button special">Reserva To-Go</button>
+                                                    </a>
      						</div>
                                                 <div class="6u">
                                                     @include('plus')
-                                                    <button class="button special">Reserva Plus</button>
+                                                    <a id="open-nav" href="javascript:void(0)">
+                                                        <button class="button special">Reserva Plus</button>
+                                                    </a>
      						</div>
      					</div>
      				</div>

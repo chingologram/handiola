@@ -9,4 +9,7 @@ $(function() {
         window.setTimeout(function() { $('#servicios header').addClass('focustext') }, 0);
         return false;
     });
+    $('#open-nav').click(function() {
+        openNav();
+    });
 });
