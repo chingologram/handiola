@@ -25,16 +25,15 @@ $(document).ready(function(){
             Iniciar Sesión Con
           </span>
         </div>
-            <a href="facebook" class="btn-face m-b-10">
-              <i class="fa fa-facebook-official"></i>
-              Facebook
-            </a>
-            
             <a href="redirectgo" class="btn-google m-b-10">
               <img src="../../../public/template/login/images/icons/icon-google.png" alt="GOOGLE">
               Google
             </a>
-            
+
+            <a href="facebook" class="btn-face m-b-10">
+              <i class="fa fa-facebook-official"></i>
+              Facebook
+            </a>
 
           <div class="wrap-input100 validate-input m-t-16 m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
           <input class="input100" type="text" name="email" placeholder="Email">
