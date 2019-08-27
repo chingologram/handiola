@@ -76,7 +76,7 @@
                   <li><a href="/vision">Visión</a></li>
                   <li><a href="/contacto">Contacto</a></li>
                   @if (Auth::check())
-                      <li><a href="/reservas">Mis Reservas</a></li>
+                      <li><a href="/Reservas">Mis Reservas</a></li>
                   @endif
               </ul>
         </nav>
