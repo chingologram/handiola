@@ -25,12 +25,12 @@ $(document).ready(function(){
             Iniciar Sesión Con
           </span>
         </div>
-            <a href="redirectgo" class="btn-google m-b-10">
+            <a href="redirectgo" class="btn-google">
               <img src="../../../public/template/login/images/icons/icon-google.png" alt="GOOGLE">
               Google
             </a>
 
-            <a href="facebook" class="btn-face m-b-10">
+            <a href="facebook" class="btn-face">
               <i class="fa fa-facebook-official"></i>
               Facebook
             </a>

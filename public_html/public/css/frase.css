@@ -49,9 +49,12 @@
   padding: 8px;
 }
 
+.overlay .monto {
+    margin: 1em 0;
+}
 .overlay .terms {
     font-size: smaller;
-    margin: 1em 0;
+    margin: 1em 0 0 0;
     font-family: 'Roboto', sans-serif;
     color: white;
 }

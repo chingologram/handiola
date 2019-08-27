@@ -1121,9 +1121,19 @@
                         height: 2em;
 		}
 
+                #servicios {
+                    background-image: url(/images/servicios.png);
+                    background-color: white;
+                }
+
                 #servicios * {
                     font-family: 'Roboto';
-                    color: white;
+                    color: #2c2c2c;
+                }
+
+                #servicios header h2 {
+                    font-weight: bolder;
+                    color: #b02952;
                 }
 
                 #servicios ul {

@@ -810,7 +810,9 @@ function calcularReserva(){
                </select><br>
 -->
             
-             <input id="costo_total"  style="color:white;border: none;outline: none;width:200px;height: 40px;display:inline;" type="text" class="in-sti" disabled>
+             <div class="monto">
+                 Monto:&nbsp;<input id="costo_total"  style="color:white;border: none;outline: none;width:200px;height: 40px;display:inline;" type="text" class="in-sti" disabled>&nbsp;ARS
+             </div>
                <button type="button" id="GuardarReserva" style="font-size: 25px;" class="button special" name="button">Reservar Ya</button>
             </a>
             <div class="terms">
@@ -898,13 +900,13 @@ function calcularReserva(){
      					<div class="row">
                                                 <div class="6u">
                                                     @include('togo')
-                                                    <a href="/contacto">
+                                                    <a id="open-nav" href="javascript:void(0)">
                                                         <button class="button special">Reserva To-Go</button>
                                                     </a>
      						</div>
                                                 <div class="6u">
                                                     @include('plus')
-                                                    <a id="open-nav" href="javascript:void(0)">
+                                                    <a href="/contacto">
                                                         <button class="button special">Reserva Plus</button>
                                                     </a>
      						</div>
