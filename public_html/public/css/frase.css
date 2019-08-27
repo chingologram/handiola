@@ -21,6 +21,13 @@
     background-size: cover;
     background-position: center center;
 }
+.overlay .errors {
+    top: -4em;
+    opacity: 0;
+    transition: opacity .5s;
+    color: white;
+    position: relative;
+}
 
 .overlay-content {
 	z-index: 10000000000000;

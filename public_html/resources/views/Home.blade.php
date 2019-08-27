@@ -399,6 +399,16 @@ function calcularReserva(){
 
     $(document).ready(function(){
 
+        var reservaChangeHandler = function() {
+            var result = validarReserva();
+            if (result != "OK") {
+                $('.overlay .errors').html(result.nl2br()).css({opacity: 1});
+                $('#GuardarReserva').attr('disabled', 'disabled');
+            } else {
+                $('#GuardarReserva').attr('disabled', null);
+                $('.overlay .errors').empty().css({opacity: 0});
+            }
+        }
 
       @if(empty($reserva))
 
@@ -476,8 +486,7 @@ function calcularReserva(){
             $('#fecha_desde').attr('min','<?php echo $feminimo;?>');
             $('#fecha_hasta').attr('min','<?php echo $fehasta; ?>');
             $('#fecha_llave').attr('min','<?php echo date('Y-m-d'); ?>')
-       }else{
-
+        } else {
 
             $('#fecha_desdeA').dateTimePicker({
               dateFormat: "YYYY-MM-DD",
@@ -486,31 +495,34 @@ function calcularReserva(){
               selectData: "now",
               positionShift: {top:-190, left: -50},
               title: "Seleccione una Fecha",
-              buttonTitle: "Seleccionar"
+              buttonTitle: "Seleccionar",
+              onSelect:  reservaChangeHandler
             });
 
             $('.fecha_hasta').dateTimePicker({
-                 dateFormat: "YYYY-MM-DD",
-                 locale: 'es',
-                 showTime: false,
-                 selectData: moment().add(2, 'days'),
-                 min: moment().add(2, 'days'),
-                 positionShift: { top: -190, left: -50},
-                 title: "Seleccione una fecha",
-                 buttonTitle: "Seleccionar"
-               });
+                dateFormat: "YYYY-MM-DD",
+                locale: 'es',
+                showTime: false,
+                selectData: moment().add(2, 'days'),
+                min: moment().add(2, 'days'),
+                positionShift: { top: -190, left: -50},
+                title: "Seleccione una fecha",
+                buttonTitle: "Seleccionar",
+                onSelect:  reservaChangeHandler
+            });
 
-               $('#fecha_llaveA').dateTimePicker({
-                    dateFormat: "YYYY-MM-DD",
-                    locale: 'es',
-                    showTime: false,
-                    selectData: "now",
-                    positionShift: { top: -190, left: -50},
-                    title: "Seleccione una fecha",
-                    buttonTitle: "Seleccionar"
-                  });
+            $('#fecha_llaveA').dateTimePicker({
+                dateFormat: "YYYY-MM-DD",
+                locale: 'es',
+                showTime: false,
+                selectData: "now",
+                positionShift: { top: -190, left: -50},
+                title: "Seleccione una fecha",
+                buttonTitle: "Seleccionar",
+                onSelect:  reservaChangeHandler
+            });
 
-       }
+        }
 
        $('#enviarForm').click(function(){
          var nombre=$('#nombre').val();
@@ -813,8 +825,9 @@ function calcularReserva(){
              <div class="monto">
                  Monto:&nbsp;<input id="costo_total"  style="color:white;border: none;outline: none;width:200px;height: 40px;display:inline;" type="text" class="in-sti" disabled>&nbsp;ARS
              </div>
-               <button type="button" id="GuardarReserva" style="font-size: 25px;" class="button special" name="button">Reservar Ya</button>
+               <button type="button" id="GuardarReserva" disabled="disabled" style="font-size: 25px;" class="button special" name="button">Reservar Ya</button>
             </a>
+            <div class="errors"></div>
             <div class="terms">
                 <small>
                     Al hacer clic aceptas los <a target="_blank" href="/terminos_y_condiciones">Términos y Condiciones de Uso y Política de Privacidad</a>                </small>
