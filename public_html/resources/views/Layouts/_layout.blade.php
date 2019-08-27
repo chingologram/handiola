@@ -93,8 +93,7 @@
               <div class="6u">
                 <h2 style="text-align:left;">Handiola</h2>
 								<p>
-									No te olvides de darle un vistazo a nuestras Redes Sociales, así
- estarás enterado de nuestras últimas novedades y promociones
+Conectate con nosotros o WhatsAppeanos ¡Maximizá tus ganancias!
 								</p>
                 <ul class="icons">
 
