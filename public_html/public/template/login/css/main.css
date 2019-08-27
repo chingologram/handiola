@@ -239,6 +239,9 @@ iframe {
   width: 100%;
   display: block;
 }
+.login100-form-title img {
+    width: 50%;
+}
 
 
 /*---------------------------------------------*/
