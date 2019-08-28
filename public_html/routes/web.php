@@ -2,16 +2,15 @@
 
 use Illuminate\Support\Facades\Storage;
 
-$pages = Cache::rememberForever('pages', function() {
-    $parsedown = new Parsedown;
-    $pages = Storage::disk('static')->allFiles('pages');
-    $pageViews = [];
-    foreach ($pages as $aPage) {
-        $pageName = preg_replace('/pages\/(.*)\.md/', '\1', $aPage);
-        $pageViews[$pageName] = $parsedown->setSafeMode(false)->setMarkupEscaped(false)->text(Storage::disk('public')->get($aPage));
-    }
-    return $pageViews;
-});
+$parsedown = new Parsedown;
+$pages = Storage::disk('static')->allFiles('pages');
+$pageViews = [];
+foreach ($pages as $aPage) {
+    $pageName = preg_replace('/pages\/(.*)\.md/', '\1', $aPage);
+    $pageViews[$pageName] = $parsedown->setSafeMode(false)->setMarkupEscaped(false)->text(Storage::disk('static')->get($aPage));
+}
+$pages = $pageViews;
+
 foreach ($pages as $route => $content) {
     Route::get("/$route",  function() use ($content) {
         return View::make('pagina', [
