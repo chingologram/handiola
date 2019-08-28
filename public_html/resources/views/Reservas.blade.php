@@ -793,8 +793,11 @@ function calcularReserva(){
                  <input  id="fecha_llave" type="hidden" class="datepicker in-sti datepic" onchange="calcularReserva();"  style="color:white;border: none;outline: none;width:300px;height: 40px;display:inline;" type="text"/>
                   entre las
                   <select id="hora_llave" class="sel"  onchange="calcularReserva();" name="" style="color:white;border: none;outline: none;width:250px;height: 40px;display:inline;">
+                    <option value="8:00 y 10:00">8:00 y 10:00</option>
+                    <option value="10:00 y 12:00">10:00 y 12:00</option>
+                    <option value="12:00 y 14:00">12:00 y 14:00</option>
+                    <option value="14:00 y 16:00">14:00 y 16:00</option>
                     <option value="16:00 y 18:00">16:00 y 18:00</option>
-                    <option value="17:00 y 19:00">17:00 y 19:00</option>
                     <option value="18:00 y 20:00">18:00 y 20:00</option>
                   </select>
                   horas.

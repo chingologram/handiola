@@ -380,9 +380,12 @@ $(document).ready(function(){
            <div class="6u">
               <label for="">Horario:</label>
               <select class="" name="" class="form-control" name="" id="hora_llave">
-                  <option value="16:00 y 18:00">16:00 y 18:00</option>
-                  <option value="17:00 y 19:00">17:00 y 19:00</option>
-                  <option value="18:00 y 20:00">18:00 y 20:00</option>
+                    <option value="8:00 y 10:00">8:00 y 10:00</option>
+                    <option value="10:00 y 12:00">10:00 y 12:00</option>
+                    <option value="12:00 y 14:00">12:00 y 14:00</option>
+                    <option value="14:00 y 16:00">14:00 y 16:00</option>
+                    <option value="16:00 y 18:00">16:00 y 18:00</option>
+                    <option value="18:00 y 20:00">18:00 y 20:00</option>
                </select>
             </div>
             <div class="6u">
