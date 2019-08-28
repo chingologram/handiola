@@ -66,10 +66,14 @@
               <a href="login" class="button " style="background-color:rgba(156,156,156,0.8);">Iniciar Sesión | Registrarse</a>
             </li>
            @endif
+            <li class="only-medium"><a href="/">Inicio</a></li>
+            <li class="only-medium"><a href="/mision">Misión</a></li>
+            <li class="only-medium"><a href="/vision">Visión</a></li>
+            <li class="only-medium"><a href="/contacto">Contacto</a></li>
           </ul>
           
         </nav>
-        <nav class="sub-nav clearfix">
+        <nav class="not-small sub-nav clearfix">
               <ul>
                   <li><a href="/">Inicio</a></li>
                   <li><a href="/mision">Misión</a></li>
