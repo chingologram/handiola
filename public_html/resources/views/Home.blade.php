@@ -765,9 +765,10 @@ function calcularReserva(){
     <input type="hidden" id="locacionllaves" name="" value="">
 
       <div class="container">
-         <p >
-            <a style="top:-100px;position:relative;color:white;">Mi alojamiento de
-               <select class="sel" onchange="calcularReserva();" id="cantidad_habitaciones" name="" style="color:white;border: none;outline: none;width:175px;height: 40px;display:inline;">
+<div class="frase">
+            Mi alojamiento de
+               <select class="sel" onchange="calcularReserva();" id="cantidad_habitaciones" name="" style="color:white;border: none;outline: none;width:10em;height: 40px;display:inline;">
+                  <option value="0">Cant. de Camas</option>
                   <option value="1">1 Cama</option>
                   <option value="2">2 camas</option>
                   <option value="3">3 camas</option>
@@ -775,7 +776,8 @@ function calcularReserva(){
                   <option value="5">+5 camas</option>
                </select>
                     Y
-               <select id="cantidad_banos" class="sel" onchange="calcularReserva();" name="" style="color:white;border: none;outline: none;width:175px;height: 40px;display:inline;">
+               <select id="cantidad_banos" class="sel" onchange="calcularReserva();" name="" style="color:white;border: none;outline: none;width:10em;height: 40px;display:inline;">
+                  <option value="0">Cant. de Baños</option>
                   <option value="1">1 Baño</option>
                   <option value="2">2 Baños</option>
                   <option value="3">3 Baños</option>
@@ -785,13 +787,13 @@ function calcularReserva(){
                , ubicado en
                <input id="direccion_alojamiento" onchange="calcularReserva();" style="color:white;border: none;outline: none;width:350px;height: 40px;display:inline;" type="text" class="in-sti">
                ,esta reservado del
-               <div class="in-sti" id="fecha_desdeA" style="top:-100px;position:relative;color:white;border:none;outline: none;width:50px;height:40px;display:inline;"></div>
+               <div class="in-sti" id="fecha_desdeA" style="color:white;border:none;outline: none;width:50px;height:40px;display:inline;"></div>
                <input type="hidden" id="fecha_desde" class="datepicker in-sti datepic" onchange="calcularReserva();" style="color:white;border:none;outline:none;width: 300px;height: 40px;display:inline;" type="text" >
               hasta el
               <div class="fecha_hasta in-sti " style="color:white;border: none;outline: none;width:50px;height: 40px;display:inline;"></div>
               <input type="hidden"  id="fecha_hasta" class="datepicker in-sti datepic" onchange="calcularReserva();"  style="color:white;border: none;outline: none;width:300px;height: 40px;display:inline;" type="text"/>
               por
-              <input id="reservante" onchange="calcularReserva();" style="color:white;border: none;outline: none;width:200px;height: 40px;display:inline;" type="text" class="in-sti" >
+              <input id="reservante" placeholder="Nombre del huésped" onchange="calcularReserva();" style="color:white;border: none;outline: none;width:12em;height: 40px;display:inline;" type="text" class="in-sti" >
              . Tenemos tu llave?
              <select class="sel" id="llave" onchange="llave(); calcularReserva();" name="" style="color:white;border: none;outline: none;width:175px;height: 40px;display:inline;">
                 <option value="si">Si</option>
@@ -828,6 +830,10 @@ function calcularReserva(){
              <div class="monto">
                  Monto:&nbsp;<input id="costo_total"  style="color:white;border: none;outline: none;width:200px;height: 40px;display:inline;" type="text" class="in-sti" disabled>&nbsp;ARS
              </div>
+            
+                        
+
+</div><a style="position:relative;color:white;">
                <button type="button" id="GuardarReserva" disabled="disabled" style="font-size: 25px;" class="button special" name="button">Reservar Ya</button>
             </a>
             <div class="errors"></div>
@@ -835,9 +841,6 @@ function calcularReserva(){
                 <small>
                     Al hacer clic aceptas los <a target="_blank" href="/terminos_y_condiciones">Términos y Condiciones de Uso y Política de Privacidad</a>                </small>
             </div>
-         </p>
-                        
-
      </div>
   </div>
 </div>

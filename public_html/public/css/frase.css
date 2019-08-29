@@ -22,10 +22,11 @@
     background-position: center center;
 }
 .overlay .errors {
-    top: -4em;
     opacity: 0;
     transition: opacity .5s;
     color: white;
+    margin-top: 10px;
+    font-size: .9em;
     position: relative;
 }
 
@@ -34,22 +35,21 @@
 	padding: 0px;
 	background-color: transparent;
     position: relative;
-    top: 25%;
+    top: 12%;
     width: 100%;
     text-align: center;
     margin-top: 30px;
 }
 
-.overlay a {
+.overlay-content .container .frase {
 
     transition: 0.3s;
-
     color: white;
   text-align: center;
   display: block;
   font-size: 30px;
-
   cursor: pointer;
+  line-height: 2em;
   letter-spacing: 2px;
   position:relative;
   overflow:hidden;
