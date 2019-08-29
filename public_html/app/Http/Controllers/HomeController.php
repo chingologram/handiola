@@ -28,9 +28,9 @@ class HomeController extends Controller
     $mensaje=$request->mensaje;
 
     $name=$nombre;
-    $title=$nombre.' Quiere Contactarse!';
+    $title= ($request->tipo == "PLUS" ? "PLUS: " : "") .$nombre.' Quiere Contactarse!';
 
-     $messagepro=$name." a completado el formulario de contacto su correo electronico es ".$correo.
+     $messagepro=$name." ha completado el formulario de contacto su correo electronico es ".$correo.
      ", y su telefono ".$telefono." y tiene el siguiente mensaje '".$mensaje."'.";
 
     Mail::to('handiolainfo@gmail.com')->send(new SendMailable($name,$title,$messagepro));
@@ -366,6 +366,14 @@ $locations=$json['status'];
      }
      public function calcularReserva(){
 
+     }
+     public function reservaPlus()
+     {
+         return view('contacto', [
+             'tipo' => 'PLUS',
+             'mensaje' => 'Contanos qué día y hora podemos contactarte y dejanos el link de tu departamento si lo tenés publicado. Queremos acompañarte a maximizar tus ganancias.',
+             'titulo' => 'Reserva Plus'
+         ]);
      }
      public function contacto(){
          return view('contacto');

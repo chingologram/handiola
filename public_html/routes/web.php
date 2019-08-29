@@ -24,6 +24,7 @@ Route::get('registro', 'HomeController@registro')->name('registro');
 Route::get('login', 'HomeController@login')->name('login');
 Route::get('calcularReserva', 'HomeController@calcularReserva')->name('calcularReserva');
 Route::get('contacto', 'HomeController@contacto')->name('contacto');
+Route::get('reservaPlus', 'HomeController@reservaPlus')->name('reservaPlus');
 Route::post('get_locationsCSV','HomeController@get_locationsCSV')->name('get_locationsCSV');
 Route::post('get_price','HomeController@get_price')->name('get_price');
 Route::post('save_reserva','HomeController@save_reserva')->name('save_reserva');

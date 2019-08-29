@@ -6,12 +6,6 @@
 <script type="text/javascript">
      $(document).ready(function(){
        $('#enviarForm').click(function(){
-         var nombre=$('#nombre').val();
-         var correo=$('#correo').val();
-         var telefono=$('#telefono').val();
-         var mensaje=$('#mensaje').val();
-
-         var data="nombre="+nombre+"&correo="+correo+"&telefono="+telefono+"&mensaje="+mensaje;
 
          $.ajaxSetup({
                     headers: {
@@ -20,8 +14,14 @@
                     });
 
              $.ajax({
+               data: {
+                     nombre: $('#nombre').val(),
+                     correo: $('#correo').val(),
+                     telefono: $('#telefono').val(),
+                     mensaje: $('#mensaje').val(),
+                     tipo: $('#tipo').val()
+               },
                url:'enviar_formulario',
-               data:data,
                type:'POST',
                success: function(response){
                    swal('Formulario Enviado!','Nos pondremos en contacto con tigo a la brevedad.','success');
@@ -32,11 +32,11 @@
 </script>
 <br>
 <br>
-<h1 style="text-align:center;">Contactanos</h1>
+<h1 style="text-align:center;">{{ $titulo ?? 'Contactanos' }}</h1>
 
 <div class="container">
   <div class="col-xl-8 col-offset-2 col-sm-12">
-
+    <input type="hidden" id="tipo" value="{{ $tipo ?? 'Contacto' }}" />
     <label for="">Llamanos: <strong style="color:black;">11-61860830</strong> o Completa el siguiente Formulario:</label>
     <div class="row">
     <div class="6u">
@@ -57,7 +57,7 @@
     <div class="row">
        <div class="12u">
            <label for="">Mensaje</label>
-           <textarea name="name" id="mensaje" rows="4" cols="80" placeholder="¿En qué podemos ayudarte? ¿Preferís que te llamemos? Indicanos la hora más conveniente para vos."></textarea>
+           <textarea name="name" id="mensaje" rows="4" cols="80" placeholder="{{ $mensaje ?? "¿En qué podemos ayudarte? ¿Preferís que te llamemos? Indicanos la hora más conveniente para vos."  }}"></textarea>
        </div>
     </div>
     <br>
